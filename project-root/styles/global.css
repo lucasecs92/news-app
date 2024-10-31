@@ -1,18 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-/* font-family: "Lobster", sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+/* font-family: "Fredericka the Great", serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* font-family: "Ubuntu Mono", monospace; */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-img {
-  height: 400px;
-  object-fit: contain;
-}
-
-#main-content {
-  margin-top: 100px;
-  padding: 60px 0px;
 }

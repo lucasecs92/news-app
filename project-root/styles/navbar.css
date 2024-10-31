@@ -3,10 +3,9 @@
     top: 0;
     right: 0; */
     width: 100%;
-    background-color: rgb(212, 187, 140);
     padding: 1rem 5%; 
     margin: auto;
-    border-bottom: 2px solid black;
+    border-bottom: 1.5px solid #343434;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,6 +15,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
+    color: #343434;
 }
 
 #nav-menu-left svg{
@@ -28,14 +28,14 @@
 
 #nav-logo h1{
     font-size: 3rem;
-    font-family: "Lobster", sans-serif;
-    color: rgba(0, 0, 0, 0.473);
+    font-family: "Fredericka the Great", serif;
+    color: #343434;
 }
 
 #nav-search {
     display: flex;
     align-items: center;
-    background-color: white; 
+    background-color: #E9DCBE; 
     border-radius: 5px;
     text-decoration: none;
 }
@@ -51,7 +51,8 @@
     height: 4vh;
     width: 10vw;
     border: none;
-    background-color: transparent;
+    border-radius: 5%;
+    background-color: #E9DCBE;
     font-weight: bold;
     color: gray;
 }
