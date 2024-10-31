@@ -5,14 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News App</title>
+    <link rel="stylesheet" href="styles/index.css">
   </head>
   <body>
     <section id="container">
-      <h1>News App</h1>
-      <section id="output"></section>
-      <p id="copyright"></p>
+      <header id="navbar-container"></header> <!-- componente navbar -->
+
+      <main id="main-content">
+        <section id="output"></section>
+        <p id="copyright"></p>
+      </main>
+
+      <footer id="footer">
+      </footer>
     </section>
     
     <script type="module" src="main.js"></script>
+    <script type="module" src="js/loadNavbar.js"></script>
   </body>
 </html>

@@ -1,0 +1,60 @@
+#navbar-wrap {
+    /* position: fixed;
+    top: 0;
+    right: 0; */
+    width: 100%;
+    background-color: rgb(212, 187, 140);
+    padding: 1rem 5%; 
+    margin: auto;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-menu-left {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#nav-menu-left svg{
+    font-size: 2rem;
+}
+
+#nav-menu-left span {
+    font-size: 1rem;
+}
+
+#nav-logo h1{
+    font-size: 3rem;
+    font-family: "Lobster", sans-serif;
+    color: rgba(0, 0, 0, 0.473);
+}
+
+#nav-search {
+    display: flex;
+    align-items: center;
+    background-color: white; 
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#nav-search svg {
+    font-size: 2em;
+    padding: 5px;
+    cursor: default;
+    color: gray;
+}
+
+#search-field {
+    height: 4vh;
+    width: 10vw;
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    color: gray;
+}
+#search-field:focus {
+    outline: none;
+}

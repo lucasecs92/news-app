@@ -1,4 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* font-family: "Lobster", sans-serif; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 img {
   height: 400px;
   object-fit: contain;
+}
+
+#main-content {
+  margin-top: 100px;
+  padding: 60px 0px;
 }
