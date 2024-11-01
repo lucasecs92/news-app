@@ -22,7 +22,6 @@ function getNews() {
                                     </div>
                                 </div>
                             </div>
-                            <br>
                         `);
                         console.log(article.title);
                     }
