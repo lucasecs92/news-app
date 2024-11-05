@@ -7,15 +7,15 @@ const API_KEY = '2dc0825f6234474ab137f53b8add4125';
 function appendAside(article, index) {
     if (article.title !== '[Removed]' && article.description !== null) {
         $('.card-aside').append(`
-            <div class="card news-card-aside" id="news-card-aside-${index}">
-                <div class="card-body-aside">
-                    <img src="${article.urlToImage}" class="card-img-top news-img" alt="${article.title}" title="${article.title}"><br>
-                    <div class="card-text news-text">
-                        <h2 class="card-title news-title-aside">${article.title}</h2>
+            <section class="card news-card-aside" id="news-card-aside-${index}">
+                <section class="card-body-aside">
+                    <img src="${article.urlToImage}" class="card-img-top news-img-aside" alt="${article.title}" title="${article.title}"><br>
+                    <section class="card-text news-text-aside">
+                        <h2 class="news-title-aside">${article.title}</h2>
                         <p>${article.description}</p>
-                    </div>
-                </div>
-            </div>
+                    </section>
+                </section>
+            </section>
         `);
     }
 }
