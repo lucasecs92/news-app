@@ -7,7 +7,7 @@ const API_KEY = '2dc0825f6234474ab137f53b8add4125';
 
 function appendArticle(article, index) {
     if (article.title !== '[Removed]' && article.description !== null) {
-        $('#output').append(`
+        $('#main-news').append(`
             <section class="card news-card" id="news-card-${index}">
                 <section class="card-body">
                     <img src="${article.urlToImage}" class="card-img-top news-img" alt="${article.title}" title="${article.title}"><br>

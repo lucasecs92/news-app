@@ -9,10 +9,13 @@
   </head>
   <body>
     <section id="container">
-      <header id="navbar-container"></header> <!-- componente navbar -->
+      <header>
+        <nav id="navbar-main"></nav>
+        <nav id="navbar-bottom"></nav>
+      </header> 
 
       <main id="main-content">
-        <section id="output"></section>
+        <section id="main-news"></section>
         <aside class="card-aside">
           <p>Informações adicionais</p>
         </aside>
@@ -23,7 +26,7 @@
     </section>
     
     <script type="module" src="main.js"></script>
-    <script type="module" src="js/loadNavbar.js"></script>
+    <script type="module" src="js/navbarMain.js"></script>
     <script type="module" src="js/newsAside.js"></script>
   </body>
 </html>

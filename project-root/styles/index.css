@@ -9,7 +9,7 @@
     margin: 10px 0;
 }
 
-#output {
+#main-news {
     width: 70%;
     display: flex;
     flex-direction: column;
