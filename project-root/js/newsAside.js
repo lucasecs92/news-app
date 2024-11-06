@@ -1,5 +1,5 @@
 import $ from "jquery";
-import '../styles/news-aside.css';
+import '../styles/newsAside.css';
 
 const API_URL_ASIDE = 'https://newsapi.org/v2/top-headlines';
 const API_KEY = '2dc0825f6234474ab137f53b8add4125';

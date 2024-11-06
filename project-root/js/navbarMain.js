@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import '../styles/navbar.css';
+import '../styles/navbarMain.css';
 
 function loadNavbarMain() {
     const navbarHTML = `

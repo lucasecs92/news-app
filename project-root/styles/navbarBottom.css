@@ -1,0 +1,21 @@
+#nav-bottom-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(137, 43, 226, 0.349);
+    padding: 0.8rem;
+    font-family: "Ubuntu Mono", monospace;
+    border-bottom: 1.5px solid #343434;
+}
+
+#nav-bottom-wrap ul { 
+    list-style: none;
+}
+#nav-bottom-wrap a {
+    text-decoration: none;
+}
+
+#nav-bottom-wrap a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.3em;text-decoration-thickness: 2px;
+}
