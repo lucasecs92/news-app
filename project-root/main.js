@@ -1,6 +1,6 @@
+import $ from "jquery";
 import './styles/global.css';
 import './styles/newsCard.css';
-import $ from "jquery";
 
 const API_URL = 'https://newsapi.org/v2/top-headlines';
 const API_KEY = '2dc0825f6234474ab137f53b8add4125';

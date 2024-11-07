@@ -1,8 +1,8 @@
-import $ from 'jquery';
-import '../styles/navbarBottom.css';
+import $ from "jquery";
+import "../styles/navbarBottom.css";
 
 function loadNavbarBottom() {
-    const navbarHTML = `
+  const navbarHTML = `
         <section id="nav-bottom-wrap">
             <ul>
                 <li>
@@ -41,8 +41,25 @@ function loadNavbarBottom() {
             </ul>
         </section>
     `;
-    
-    $('#navbar-bottom').html(navbarHTML);
+
+  $("#navbar-bottom").html(navbarHTML);
 }
 
-document.addEventListener('DOMContentLoaded', function() { loadNavbarBottom(); });
+function fixNavbarOnScroll() {
+  const navbarMain = document.querySelector("#navbar-main");
+  const navbarBottomWrap = document.querySelector("#nav-bottom-wrap");
+  
+  window.addEventListener("scroll", () => {
+    const navbarMainHeight = navbarMain.offsetHeight;
+    if (window.scrollY >= navbarMainHeight) {
+      navbarBottomWrap.classList.add("fixed");
+    } else {
+      navbarBottomWrap.classList.remove("fixed");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadNavbarBottom();
+  fixNavbarOnScroll();
+});
