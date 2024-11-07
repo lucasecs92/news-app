@@ -1,4 +1,3 @@
-// entertainment.js 
 import $ from "jquery";
 
 const API_URL = 'https://newsapi.org/v2/top-headlines';

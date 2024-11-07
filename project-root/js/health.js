@@ -3,13 +3,13 @@ import $ from "jquery";
 const API_URL = 'https://newsapi.org/v2/top-headlines';
 const API_KEY = '2dc0825f6234474ab137f53b8add4125';
 
-export function loadBusinessContent() {
+export function loadHealthContent() {
   $.ajax({
-    url: `${API_URL}?country=us&category=business&apiKey=${API_KEY}`,
+    url: `${API_URL}?country=us&category=health&apiKey=${API_KEY}`,
     method: 'GET',
     success: function(response) {
       try {
-        const businessHTML = response.articles.map((article, index) => {
+        const healthHTML = response.articles.map((article, index) => {
           if (article.title !== '[Removed]' && article.description !== null) {
             return `
               <section class="card news-card" id="news-card-${index}">
@@ -26,9 +26,9 @@ export function loadBusinessContent() {
         }).join('');
 
         $("#main-content").html(`
-          <section id="business-content">
-            <h2>Negócios</h2>
-            ${businessHTML}
+          <section id="health-content">
+            <h2>Saúde</h2>
+            ${healthHTML}
           </section>
         `);
 

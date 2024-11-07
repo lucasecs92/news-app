@@ -9,7 +9,9 @@ function loadNavbarMain() {
             </section>
 
             <section id="nav-logo">
-                <h1>News App</h1>
+                <a href="/">
+                  <h1>News App</h1>
+                </a>
             </section>
 
             <section id="nav-search">

@@ -2,15 +2,14 @@ import $ from "jquery";
 import "../styles/navbarBottom.css";
 import { loadEntertainmentContent } from "./entertainment.js";
 import { loadBusinessContent } from "./business.js";
+import { loadSportsContent } from "./sports.js";
+import { loadHealthContent } from "./health.js";
+import { loadTechnologyContent } from "./technology.js";
+import { loadScienceContent } from "./science.js";
 
 function loadNavbarBottom() {
-  const navbarHTML = `
+    const navbarHTML = `
         <section id="nav-bottom-wrap">
-            <ul>
-                <li>
-                    <a href="#">Geral</a>
-                </li>
-            </ul>
             <ul>
                 <li>
                     <a href="entretenimento" id="entertainment">Entretenimento</a>
@@ -23,38 +22,58 @@ function loadNavbarBottom() {
             </ul>
             <ul>
                 <li>
-                    <a href="#" id="esportes">Esportes</a>
+                    <a href="esportes" id="sports">Esportes</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="#" id="saude">Saúde</a>
+                    <a href="saude" id="health">Saúde</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="#" id="tecnologia">Tecnologia</a>
+                    <a href="tecnologia" id="technology">Tecnologia</a>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="#" id="ciencia">Ciência</a>
+                    <a href="ciencia" id="science">Ciência</a>
                 </li>
             </ul>
         </section>
     `;
 
-  $("#navbar-bottom").html(navbarHTML);
+    $("#navbar-bottom").html(navbarHTML);
 
-  $("#entertainment").on("click", function (event) {
-    event.preventDefault();
-    loadEntertainmentContent();
-  });
+    $("#entertainment").on("click", function (event) {
+        event.preventDefault();
+        loadEntertainmentContent();
+    });
 
-  $("#business").on("click", function (event) {
-    event.preventDefault();
-    loadBusinessContent();
-  });
+    $("#business").on("click", function (event) {
+        event.preventDefault();
+        loadBusinessContent();
+    });
+
+    $("#sports").on("click", function (event) {
+        event.preventDefault();
+        loadSportsContent();
+    });
+
+    $("#health").on("click", function (event) {
+        event.preventDefault();
+        loadHealthContent();
+    });
+
+    $("#technology").on("click", function (event) {
+        event.preventDefault();
+        loadTechnologyContent();
+    });
+
+    $("#science").on("click", function (event) {
+        event.preventDefault();
+        loadScienceContent();
+    });
 }
 
 function fixNavbarOnScroll() {
