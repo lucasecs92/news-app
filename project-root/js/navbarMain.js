@@ -39,6 +39,7 @@ function loadDate() {
     success: function (response) {
       const currentDateTime = new Date(response.datetime);
       const formattedDate = currentDateTime.toLocaleString("pt-BR", {
+        weekday: "long",
         year: "numeric",
         month: "long",
         day: "numeric",
