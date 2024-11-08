@@ -9,7 +9,7 @@ const isDevelopment = true; // Ajuste para true quando estiver desenvolvendo
 
 function appendAside(article, index) {
   if (article.title !== "[Removed]" && article.description !== null) {
-    $("#card-aside").append(`
+    $("#aside-news").append(`
         <section class="card news-card-aside" id="news-card-aside-${index}">
             <section class="card-body-aside">
                 <img src="${article.urlToImage}" class="card-img-top news-img-aside" alt="${article.title}" title="${article.title}"><br>

@@ -1,0 +1,71 @@
+.aside-weather {
+    background-color: #ffffff;
+    border: 1px solid rgba(128, 128, 128, 0.226);
+    /* border-top: 1px solid rgba(128, 128, 128, 0.226); */
+    margin: 1rem 0;
+    color: #343434;
+}
+
+.aside-h4 {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.226);
+    padding: 15px 25px;
+}
+
+.aside-weather-wrap {
+    /* background-color: rgba(52, 121, 150, 0.363);
+    color: #ffffff; */
+    padding: 15px 25px;
+}
+
+.previsao-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.5rem;
+}
+
+.previsao-temp-wrap {
+    display: flex;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.previsao-temp-wrap img {
+    width: 2em;
+}
+
+.previsao-humidity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.previsao-humidity svg {
+    font-size: 1.5em;
+}
+
+.previsao-footer {
+    padding: 15px 25px;
+    border-top: 1px solid rgba(128, 128, 128, 0.226);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.226);
+}
+
+.previsao-footer a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(52, 120, 150);
+}
+
+.previsao-footer a:hover {
+    color: rgb(38, 86, 107);
+} 
+
+.previsao-footer svg {
+    font-size: 1.5em;
+}
