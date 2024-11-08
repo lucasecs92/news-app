@@ -1,0 +1,28 @@
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 0;
+    font-family: "Ubuntu Mono", monospace;
+    /* border-top: 2px solid #ddd; */
+}
+
+.footer-container p, 
+.footer-container a {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.footer-container span {
+    font-size: 1.7rem;
+}
+
+.footer-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+}

@@ -1,11 +1,7 @@
 #navbar-wrap {
-    /* position: fixed;
-    top: 0;
-    right: 0; */
     width: 100%;
     padding: 1.5rem 0; 
     margin: auto;
-    /* border-bottom: 1.5px solid #343434; */
     display: flex;
     justify-content: space-between;
     align-items: center;
