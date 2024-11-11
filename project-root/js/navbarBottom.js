@@ -14,28 +14,18 @@ function loadNavbarBottom() {
                 <li>
                     <a href="entretenimento" id="entertainment">Entretenimento</a>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <a href="negocios" id="business">Negócios</a>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <a href="esportes" id="sports">Esportes</a>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <a href="saude" id="health">Saúde</a>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <a href="tecnologia" id="technology">Tecnologia</a>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <a href="ciencia" id="science">Ciência</a>
                 </li>

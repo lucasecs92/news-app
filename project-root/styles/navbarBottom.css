@@ -1,7 +1,5 @@
 #nav-bottom-wrap {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
   background-color: #fff;
   padding: 0.8rem;
   font-family: "Ubuntu Mono", monospace;
@@ -30,6 +28,8 @@
 }
 
 #nav-bottom-wrap ul {
+  display: flex;
+  justify-content: space-around;
   list-style: none;
 }
 
