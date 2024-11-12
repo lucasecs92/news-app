@@ -63,40 +63,56 @@ function loadNavbarBottom() {
     }
   };
 
-  $("#menu-icons").on("click", toggleMenu); 
+  $("#menu-icons").on("click", toggleMenu);
 
-  $(window).on("resize", updateMenuVisibility); 
+  $(window).on("resize", updateMenuVisibility);
 
   updateMenuVisibility();
+
+  const closeMenu = () => {
+    if (window.innerWidth < 870) {
+      isMenuOpen = false;
+      $("#ul-list").hide();
+      $("#menu-icons").html(
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>'
+      );
+    }
+  };
 
   $("#entertainment").on("click", function (event) {
     event.preventDefault();
     loadEntertainmentContent();
+    closeMenu();
   });
 
   $("#business").on("click", function (event) {
     event.preventDefault();
     loadBusinessContent();
+    closeMenu();
   });
 
   $("#sports").on("click", function (event) {
     event.preventDefault();
     loadSportsContent();
+    closeMenu();
   });
 
   $("#health").on("click", function (event) {
     event.preventDefault();
     loadHealthContent();
+    closeMenu();
   });
 
   $("#technology").on("click", function (event) {
     event.preventDefault();
     loadTechnologyContent();
+    closeMenu();
   });
 
   $("#science").on("click", function (event) {
     event.preventDefault();
     loadScienceContent();
+    closeMenu();
   });
 }
 
