@@ -1,0 +1,48 @@
+#navbar-top-wrap {
+    width: 100%;
+    padding: 0.5rem 0; 
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav-date {
+    font-size: 0.9rem;
+}
+
+#nav-search {
+    display: flex;
+    align-items: center;
+    background-color: #E9DCBE; 
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#nav-search svg {
+    font-size: 2em;
+    padding: 5px;
+    cursor: default;
+    color: gray;
+}
+
+#search-field {
+    height: 4vh;
+    width: 10vw;
+    border: none;
+    border-radius: 5%;
+    background-color: #E9DCBE;
+    font-weight: bold;
+    color: gray;
+}
+
+#search-field:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 870px) {
+    #nav-date {
+        font-size: 0.750rem;
+        font-weight: bold;
+    }
+}
