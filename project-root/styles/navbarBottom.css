@@ -24,11 +24,12 @@
   width: 100%;
   height: 1px; /* Altura do seu border-bottom */
   background-color: #00000057;
-  filter: blur(1px); 
+  filter: blur(1px);
 }
 
-#nav-bottom-wrap ul {
+#ul-list {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   list-style: none;
 }
@@ -42,4 +43,29 @@
   text-decoration: underline;
   text-underline-offset: 0.3em;
   text-decoration-thickness: 2px;
+}
+
+#menu-icons {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#nav-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+@media screen and (max-width: 870px) {
+  #menu-icons {
+    display: block;
+    text-align: center;
+  }
+
+  #ul-list {
+    flex-direction: column;
+  }
 }

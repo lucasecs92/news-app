@@ -8,9 +8,18 @@ import { loadTechnologyContent } from "./technology.js";
 import { loadScienceContent } from "./science.js";
 
 function loadNavbarBottom() {
-    const navbarHTML = `
+  let isMenuOpen = false;
+
+  const navbarHTML = `
         <section id="nav-bottom-wrap">
-            <ul>
+            <menu id="menu-icons">
+                ${
+                  isMenuOpen
+                    ? '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L17.94 6M18 18L6.06 6"/></svg>'
+                    : '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>'
+                }
+            </menu>
+            <ul id="ul-list">
                 <li>
                     <a href="entretenimento" id="entertainment">Entretenimento</a>
                 </li>
@@ -33,37 +42,63 @@ function loadNavbarBottom() {
         </section>
     `;
 
-    $("#navbar-bottom").html(navbarHTML);
+  $("#navbar-bottom").html(navbarHTML);
 
-    $("#entertainment").on("click", function (event) {
-        event.preventDefault();
-        loadEntertainmentContent();
-    });
+  const toggleMenu = () => {
+    isMenuOpen = !isMenuOpen;
+    $("#ul-list").toggle();
+    $("#menu-icons").html(
+      isMenuOpen
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L17.94 6M18 18L6.06 6"/></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>'
+    );
+  };
 
-    $("#business").on("click", function (event) {
-        event.preventDefault();
-        loadBusinessContent();
-    });
+  const updateMenuVisibility = () => {
+    if (window.innerWidth >= 870) {
+      $("#ul-list").show();
+    } else {
+      if (!isMenuOpen) {
+        $("#ul-list").hide();
+      }
+    }
+  };
 
-    $("#sports").on("click", function (event) {
-        event.preventDefault();
-        loadSportsContent();
-    });
+  $("#menu-icons").on("click", toggleMenu); 
 
-    $("#health").on("click", function (event) {
-        event.preventDefault();
-        loadHealthContent();
-    });
+  $(window).on("resize", updateMenuVisibility); 
 
-    $("#technology").on("click", function (event) {
-        event.preventDefault();
-        loadTechnologyContent();
-    });
+  updateMenuVisibility();
 
-    $("#science").on("click", function (event) {
-        event.preventDefault();
-        loadScienceContent();
-    });
+  $("#entertainment").on("click", function (event) {
+    event.preventDefault();
+    loadEntertainmentContent();
+  });
+
+  $("#business").on("click", function (event) {
+    event.preventDefault();
+    loadBusinessContent();
+  });
+
+  $("#sports").on("click", function (event) {
+    event.preventDefault();
+    loadSportsContent();
+  });
+
+  $("#health").on("click", function (event) {
+    event.preventDefault();
+    loadHealthContent();
+  });
+
+  $("#technology").on("click", function (event) {
+    event.preventDefault();
+    loadTechnologyContent();
+  });
+
+  $("#science").on("click", function (event) {
+    event.preventDefault();
+    loadScienceContent();
+  });
 }
 
 function fixNavbarOnScroll() {
