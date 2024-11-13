@@ -21,6 +21,16 @@ function loadNavbarTop() {
     </section>
   `;
   $("#navbar-top").html(navbarHTML);
+
+  // Adicionando a função de clique ao ícone de busca
+  $("#nav-search svg").on("click", function () {
+    const searchField = $("#search-field");
+    if (searchField.css("display") === "none") {
+      searchField.css("display", "block");
+    } else {
+      searchField.css("display", "none");
+    }
+  });
 }
 
 // API de data, World Time API
@@ -45,6 +55,6 @@ function loadDate() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadNavbarTop()
+  loadNavbarTop();
   loadDate();
 });

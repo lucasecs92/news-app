@@ -22,6 +22,12 @@
     }
 }
 
+@media screen and (max-width: 620px) {
+    #navbar-main-wrap {
+        padding: 0;
+    }
+}
+
 /* @media screen and (max-width: 750px) {
     #navbar-wrap {
         display: grid;

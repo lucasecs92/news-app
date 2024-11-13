@@ -35,12 +35,12 @@
   list-style: none;
 }
 
-#nav-bottom-wrap a {
+#ul-list li a {
   text-decoration: none;
   color: black;
 }
 
-#nav-bottom-wrap a:hover {
+#ul-list li a:hover {
   text-decoration: underline;
   text-underline-offset: 0.3em;
   text-decoration-thickness: 2px;
@@ -73,5 +73,11 @@
   #ul-list li {
     padding: 2rem 0;
     border-bottom: 1px solid #ddd;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  #nav-bottom-wrap {
+    padding: 1rem 0 0 0;
   }
 }
