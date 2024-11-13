@@ -27,30 +27,3 @@
         padding: 0;
     }
 }
-
-/* @media screen and (max-width: 750px) {
-    #navbar-wrap {
-        display: grid;
-        grid-template-columns: 1.5fr 3fr 1.5fr;
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: 25px;
-        grid-row-gap: 30px;
-        justify-items: center;
-        padding-bottom: 0;
-    }
-    #nav-logo { grid-area: 1 / 2 / 2 / 3; }
-    #nav-date-wrap { grid-area: 2 / 1 / 3 / 2; }
-    #nav-search { grid-area: 2 / 3 / 3 / 4; }
-}
-
-@media screen and (max-width: 625px) {
-    #navbar-wrap {
-        grid-column-gap: 0px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    #nav-logo h1 {
-        font-size: 2.3rem;
-    }
-} */

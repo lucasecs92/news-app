@@ -23,7 +23,7 @@
   bottom: -2px;
   left: 0;
   width: 100%;
-  height: 1px; /* Altura do seu border-bottom */
+  height: 1px; /* Altura do border-bottom */
   background-color: #00000057;
   filter: blur(1px);
 }
