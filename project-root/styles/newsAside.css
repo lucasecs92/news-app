@@ -34,7 +34,7 @@
 #news-card-aside-4 
 {
     display: inline-block; 
-    width: 48.5%; 
+    width: 48.5%;
     vertical-align: top;
     border-bottom: 0; 
 }
@@ -95,6 +95,13 @@
 #news-card-aside-19 img
 {
     width: 100%;
+}
+
+#news-card-aside-1 img,
+#news-card-aside-2 img,
+#news-card-aside-3 img, 
+#news-card-aside-4 img {
+    height: 90px;
 }
   
 .news-card-aside {
