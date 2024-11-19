@@ -1,7 +1,7 @@
 import $ from "jquery";
 import "../styles/newsAside.css";
 
-const API_URL_ASIDE = "https://newsapi.org/v2/top-headlines";
+const API_URL = "https://newsapi.org/v2/top-headlines";
 const API_KEY = "2dc0825f6234474ab137f53b8add4125";
 
 function timeSince(date) {
@@ -39,6 +39,7 @@ function appendAside(article, index) {
           <img src="${article.urlToImage}" class="news-img-aside" alt="${article.title}" title="${article.title}">
           
           <section class="card-text news-text-aside">
+            <p class="news-author">${article.author || ""}</p>
             <h2 class="news-title-aside">${article.title}</h2>
             <p class="news-description">${article.description}</p>
             <p class="news-time-published">${timeElapsed}</p>
@@ -52,7 +53,7 @@ function appendAside(article, index) {
 
 function getNews() {
   $.ajax({
-    url: `${API_URL_ASIDE}?country=us&category=general&apiKey=${API_KEY}`,
+    url: `${API_URL}?country=us&category=general&apiKey=${API_KEY}`,
     method: "GET",
     success: function (response) {
       try {
