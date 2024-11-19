@@ -37,10 +37,12 @@
     padding: 1rem 0;
 }
 
+#news-card-aside-0 .card-body-aside {
+    padding-top: 0;
+}
 #news-card-aside-5 .card-body-aside {
     border-top: 1px solid black;
     flex-direction: column-reverse;
-    margin: 10px 0;
 }
 
 /* imagens */
@@ -51,7 +53,7 @@
 #news-card-aside-2 .news-img-aside,
 #news-card-aside-3 .news-img-aside, 
 #news-card-aside-4 .news-img-aside {
-    height: 90px;
+    height: 100px;
 }
 
 /* titulo */

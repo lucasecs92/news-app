@@ -4,8 +4,6 @@ import "../styles/newsAside.css";
 const API_URL_ASIDE = "https://newsapi.org/v2/top-headlines";
 const API_KEY = "2dc0825f6234474ab137f53b8add4125";
 
-// Variável de ambiente para controlar o modo de desenvolvimento
-// const isDevelopment = true; // Ajuste para true quando estiver desenvolvendo
 function timeSince(date) {
   const seconds = Math.floor((new Date() - new Date(date)) / 1000);
   let interval = Math.floor(seconds / 31536000);
@@ -52,27 +50,6 @@ function appendAside(article, index) {
   }
 }
 
-// function getMockNews() {
-//   const mockData = {
-//     articles: [
-//       {
-//         title: "Título de Teste 1",
-//         description: "Descrição de teste 1",
-//         urlToImage: "https://via.placeholder.com/150",
-//       },
-//       {
-//         title: "Título de Teste 2",
-//         description: "Descrição de teste 2",
-//         urlToImage: "https://via.placeholder.com/150",
-//       },
-//     ],
-//   };
-//   mockData.articles.forEach((article, index) => {
-//     appendAside(article, index);
-//     console.log(article.title);
-//   });
-// }
-
 function getNews() {
   $.ajax({
     url: `${API_URL_ASIDE}?country=us&category=general&apiKey=${API_KEY}`,
@@ -94,10 +71,3 @@ function getNews() {
 }
 
 getNews();
-
-// Executa getNews ou getMockNews com base no modo de desenvolvimento
-// if (isDevelopment) {
-//     getMockNews();
-// } else {
-//     getNews();
-// }

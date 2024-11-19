@@ -14,7 +14,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding: 0.8rem 9%;
+  padding: 0.8rem 18.5%;
   border-bottom: none;
 }
 
@@ -61,6 +61,31 @@
   padding: 0;
 }
 
+@media screen and (max-width: 1775px) {
+  #nav-bottom-wrap.fixed {
+    padding: 0.8rem 14%;
+  }
+}
+@media screen and (max-width: 1575px) {
+  #nav-bottom-wrap.fixed {
+    padding: 0.8rem 11%;
+  }
+}
+@media screen and (max-width: 1445px) {
+  #nav-bottom-wrap.fixed {
+    padding: 0.8rem 7%;
+  }
+}
+@media screen and (max-width: 1375px) {
+  #nav-bottom-wrap.fixed {
+    padding: 0.8rem 6%;
+  }
+}
+@media screen and (max-width: 1275px) {
+  #nav-bottom-wrap.fixed {
+    padding: 0.8rem 4.5%;
+  }
+}
 @media screen and (max-width: 870px) {
   #menu-icons {
     display: block;

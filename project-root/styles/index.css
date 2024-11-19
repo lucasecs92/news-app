@@ -1,5 +1,5 @@
 #container {
-    padding: 0 9%;
+    padding: 0 18.5%;
 }
 
 #main-content {
@@ -24,14 +24,28 @@
     flex-direction: column;
 }
 
-@media screen and (max-width: 1375px) {
+@media screen and (max-width: 1775px) {
     #container {
-        padding: 0 8%;
+        padding: 0 14%;
     }
 }
-
+@media screen and (max-width: 1575px) {
+    #container {
+        padding: 0 11%;
+    }
+}
+@media screen and (max-width: 1445px) {
+    #container {
+        padding: 0 7%;
+    }
+}
+@media screen and (max-width: 1375px) {
+    #container {
+        padding: 0 6%;
+    }
+}
 @media screen and (max-width: 1275px) {
     #container {
-        padding: 0 5.5%;
+        padding: 0 4.5%;
     }
 }
