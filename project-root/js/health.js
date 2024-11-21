@@ -27,7 +27,7 @@ export function loadHealthContent() {
 
         $("#main-content").html(`
           <section id="health-content">
-            <h2>Saúde</h2>
+            <h2 class="news-card-title">Saúde</h2>
             ${healthHTML}
           </section>
         `);

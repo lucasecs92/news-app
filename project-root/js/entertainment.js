@@ -27,7 +27,7 @@ export function loadEntertainmentContent() {
 
         $("#main-content").html(`
           <section id="entertainment-content">
-            <h2>Entretenimento</h2>
+            <h2 class="news-card-title">Entretenimento</h2>
             ${entertainmentHTML}
           </section>
         `);

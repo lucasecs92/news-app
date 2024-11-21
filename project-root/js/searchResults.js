@@ -22,7 +22,7 @@ function renderSearchResults(articles) {
 
     $("#main-content").html(`
         <section id="search-results-content">
-            <h2>Resultados da Busca</h2>
+            <h2 class="news-card-title">Resultados da Busca</h2>
             ${resultsHTML}
         </section>
     `);

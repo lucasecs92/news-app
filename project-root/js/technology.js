@@ -27,7 +27,7 @@ export function loadTechnologyContent() {
 
         $("#main-content").html(`
           <section id="technology-content">
-            <h2>Tecnologia</h2>
+            <h2 class="news-card-title">Tecnologia</h2>
             ${technologyHTML}
           </section>
         `);

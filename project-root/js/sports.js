@@ -27,7 +27,7 @@ export function loadSportsContent() {
 
         $("#main-content").html(`
           <section id="sports-content">
-            <h2>Esportes</h2>
+            <h2 class="news-card-title">Esportes</h2>
             ${sportsHTML}
           </section>
         `);

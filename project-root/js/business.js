@@ -27,7 +27,7 @@ export function loadBusinessContent() {
 
         $("#main-content").html(`
           <section id="business-content">
-            <h2>Negócios</h2>
+            <h2 class="news-card-title">Negócios</h2>
             ${businessHTML}
           </section>
         `);

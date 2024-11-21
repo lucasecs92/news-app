@@ -27,7 +27,7 @@ export function loadScienceContent() {
 
         $("#main-content").html(`
           <section id="science-content">
-            <h2>Ciência</h2>
+            <h2 class="news-card-title">Ciência</h2>
             ${scienceHTML}
           </section>
         `);
