@@ -1,5 +1,6 @@
 import $ from "jquery";
 import "../styles/navbarTop.css";
+import { searchArticles } from "./searchResults"
 
 function loadNavbarTop() {
   const navbarHTML = `
@@ -30,6 +31,13 @@ function loadNavbarTop() {
     } else {
       searchField.css("display", "none");
     }
+  });
+
+  $("#search-field").on("keypress", function (e) {
+    if (e.which === 13) { // Enter key 
+      const query = $(this).val(); 
+      searchArticles(query); 
+    } 
   });
 }
 
