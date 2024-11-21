@@ -1,31 +1,17 @@
 import $ from "jquery";
+import "../styles/searchResults.css";
 
 const API_URL = 'https://newsapi.org/v2/everything';
 const API_KEY = '2dc0825f6234474ab137f53b8add4125';
 
+function formatDate(date) { 
+    const options = { day: 'numeric', month: 'short' }; // Formato de dia e mês abreviado 
+    return new Date(date).toLocaleDateString('pt-BR', options); // Formato de data pt-BR 
+}
+
 function timeSince(date) {
-    const seconds = Math.floor((new Date() - new Date(date)) / 1000);
-    let interval = Math.floor(seconds / 31536000);
-    if (interval > 1) {
-      return `Há ${interval} anos`;
-    }
-    interval = Math.floor(seconds / 2592000);
-    if (interval > 1) {
-      return `Há ${interval} meses`;
-    }
-    interval = Math.floor(seconds / 86400);
-    if (interval > 1) {
-      return `Há ${interval} dias`;
-    }
-    interval = Math.floor(seconds / 3600);
-    if (interval > 1) {
-      return `Há ${interval} horas`;
-    }
-    interval = Math.floor(seconds / 60);
-    if (interval > 1) {
-      return `Há ${interval} minutos`;
-    }
-    return `Há ${Math.floor(seconds)} segundos`;
+    const timeElapsed = formatDate(date); 
+    return `Publicado em ${timeElapsed}`;
 }
 
 function renderSearchResults(articles) {
@@ -34,14 +20,14 @@ function renderSearchResults(articles) {
             const timeElapsed = timeSince(article.publishedAt);
 
             return `
-                <section class="card news-card" id="news-card-${index}">
-                    <section class="card-body">
-                        <img src="${article.urlToImage}" class="card-img-top news-img" alt="${article.title}" title="${article.title}"><br>
-                        <section class="card-text news-text">
-                            <h2 class="card-title news-title">${article.title}</h2>
-                            <p>${article.description}</p>
-                            <p class="news-time-published">${timeElapsed}</p>
+                <section class="result-search-card" id="result-search-card-${index}">
+                    <section class="result-card-body">
+                        <img src="${article.urlToImage}" class="result-news-img" alt="${article.title}" title="${article.title}"><br>
+                        <section class="result-news-text">
+                            <h2 class="result-news-title">${article.title}</h2>
+                            <p class="result-news-p">${article.description}</p>
                         </section>
+                        <p class="result-news-time-published">${timeElapsed}</p>
                     </section>
                 </section>
             `;
@@ -50,7 +36,7 @@ function renderSearchResults(articles) {
 
     $("#main-content").html(`
         <section id="search-results-content">
-            <h2 class="news-card-title">Resultados da Busca</h2>
+            <h2 class="search-results-card-title">Resultados da Busca</h2>
             ${resultsHTML}
         </section>
     `);
