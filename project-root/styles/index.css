@@ -23,11 +23,11 @@
     display: flex;
     flex-direction: column;
 }
+
 #aside-most-read {
     padding: 10px 0;
     font-size: 1.3rem;
     font-weight: bold;
-    border-top: 1px solid #343434; 
     color: #343434;
 }
 

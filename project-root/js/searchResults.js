@@ -14,7 +14,7 @@ function timeSince(date) {
     return `Publicado em ${timeElapsed}`;
 }
 
-function renderSearchResults(articles) {
+function renderSearchResults(articles, query) {
     const resultsHTML = articles.map((article, index) => {
         if (article.title !== '[Removed]' && article.description !== null) {
             const timeElapsed = timeSince(article.publishedAt);
@@ -36,25 +36,25 @@ function renderSearchResults(articles) {
 
     $("#main-content").html(`
         <section id="search-results-content">
-            <h2 class="search-results-card-title">Resultados da Busca</h2>
+            <h2 class="search-results-card-title">Resultados da Busca: ${query}</h2>
             ${resultsHTML}
         </section>
     `);
 }
 
 export function searchArticles(query) {
-  $.ajax({
-    url: `${API_URL}?q=${query}&apiKey=${API_KEY}`,
-    method: 'GET',
-    success: function(response) {
-      try {
-        renderSearchResults(response.articles);
-      } catch (err) {
-        console.error('Erro ao processar artigos: ', err);
-      }
-    },
-    error: function(err) {
-      console.error('Erro ao buscar notícias: ', err);
-    }
-  });
+    $.ajax({
+        url: `${API_URL}?q=${query}&apiKey=${API_KEY}`,
+        method: 'GET',
+        success: function(response) {
+            try {
+                renderSearchResults(response.articles, query);
+            } catch (err) {
+                console.error('Erro ao processar artigos: ', err);
+            }
+        },
+        error: function(err) {
+            console.error('Erro ao buscar notícias: ', err);
+        }
+    });
 }

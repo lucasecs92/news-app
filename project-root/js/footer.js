@@ -4,7 +4,7 @@ import "../styles/footer.css";
 $(function () {
     const footerContent = ` 
         <section class="footer-container"> 
-            <p><span>&copy;</span> 2023 - News App</p> 
+            <p><span>&copy;</span> 2024 - News App</p> 
             <nav class="footer-nav"> 
                 <ul> 
                     <li>
