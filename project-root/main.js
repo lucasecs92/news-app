@@ -1,49 +1,52 @@
 import $ from "jquery";
 import "./styles/global.css";
-import "./styles/newsCard.css";
+import "./styles/mainNews.css";
 
 const API_URL = "https://newsapi.org/v2/top-headlines";
 const API_KEY = "2dc0825f6234474ab137f53b8add4125";
 
-// Variável de ambiente para controlar o modo de desenvolvimento 
-const isDevelopment = true; // Ajuste para true quando estiver desenvolvendo
+function timeSince(date) {
+  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
+  let interval = Math.floor(seconds / 31536000);
+  if (interval > 1) {
+    return `Há ${interval} anos`;
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return `Há ${interval} meses`;
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return `Há ${interval} dias`;
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return `Há ${interval} horas`;
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return `Há ${interval} minutos`;
+  }
+  return `Há ${Math.floor(seconds)} segundos`;
+}
 
 function appendArticle(article, index) {
   if (article.title !== "[Removed]" && article.description !== null) {
+    const timeElapsed = timeSince(article.publishedAt);
+
     $("#main-news").append(`
-        <section class="card news-card" id="news-card-${index}">
-            <section class="card-body">
-                <img src="${article.urlToImage}" class="card-img-top news-img" alt="${article.title}" title="${article.title}"><br>
-                <section class="card-text news-text">
-                    <h2 class="card-title news-title">${article.title}</h2>
-                    <p>${article.description}</p>
-                </section>
-            </section>
+      <section class="main-news-card" id="main-news-card-${index}">
+        <section class="card-body">
+          <img src="${article.urlToImage}" class="main-news-img" alt="${article.title}" title="${article.title}"><br>
+          <section class="main-news-text">
+            <h2 class="main-news-title">${article.title}</h2>
+            <p class="main-news-description">${article.description}</p>
+            <p class="main-news-time-published">${timeElapsed}</p>
+          </section>
         </section>
+      </section>
     `);
   }
-}
-
-// Config temporária: o conteúdo não será carregado para ser estilizado enquanto você está em modo de desenvolvimento.
-function getMockNews() {
-  const mockData = {
-    articles: [
-      {
-        title: "Título de Teste 1",
-        description: "Descrição de teste 1",
-        urlToImage: "https://via.placeholder.com/150",
-      },
-      {
-        title: "Título de Teste 2",
-        description: "Descrição de teste 2",
-        urlToImage: "https://via.placeholder.com/150",
-      },
-    ],
-  };
-  mockData.articles.forEach((article, index) => {
-    appendArticle(article, index);
-    console.log(article.title);
-  });
 }
 
 function getNews() {
@@ -66,11 +69,4 @@ function getNews() {
   });
 }
 
-// getNews();
-
-// Executa getNews ou getMockNews com base no modo de desenvolvimento
-if (isDevelopment) {
-  getMockNews();
-} else {
-  getNews();
-}
+getNews();

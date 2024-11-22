@@ -37,14 +37,12 @@ function appendAside(article, index) {
       <section class="news-card-aside" id="news-card-aside-${index}">
         <section class="card-body-aside">
           <img src="${article.urlToImage}" class="news-img-aside" alt="${article.title}" title="${article.title}">
-          
           <section class="card-text news-text-aside">
             <p class="news-author">${article.author || ""}</p>
             <h2 class="news-title-aside">${article.title}</h2>
             <p class="news-description">${article.description}</p>
             <p class="news-time-published">${timeElapsed}</p>
           </section>
-          
         </section>
       </section>
     `);
@@ -52,23 +50,51 @@ function appendAside(article, index) {
 }
 
 function getNews() {
-  $.ajax({
-    url: `${API_URL}?country=us&category=general&apiKey=${API_KEY}`,
-    method: "GET",
-    success: function (response) {
-      try {
-        response.articles.forEach((article, index) => {
-          appendAside(article, index);
-          console.log(article.title);
-        });
-      } catch (err) {
-        console.error("Erro ao processar artigos: ", err);
-      }
-    },
-    error: function (err) {
-      console.error("Erro ao buscar notícias: ", err);
-    },
-  });
+  if (sessionStorage.getItem("newsData")) {
+    const newsData = JSON.parse(sessionStorage.getItem("newsData"));
+    newsData.forEach((article, index) => {
+      appendAside(article, index);
+    });
+  } else {
+    $.ajax({
+      url: `${API_URL}?country=us&category=general&apiKey=${API_KEY}`,
+      method: "GET",
+      success: function (response) {
+        try {
+          sessionStorage.setItem("newsData", JSON.stringify(response.articles));
+          response.articles.forEach((article, index) => {
+            appendAside(article, index);
+            console.log(article.title);
+          });
+        } catch (err) {
+          console.error("Erro ao processar artigos: ", err);
+        }
+      },
+      error: function (err) {
+        console.error("Erro ao buscar notícias: ", err);
+      },
+    });
+  }
 }
+
+// function getNews() {
+//   $.ajax({
+//     url: `${API_URL}?country=us&category=general&apiKey=${API_KEY}`,
+//     method: "GET",
+//     success: function (response) {
+//       try {
+//         response.articles.forEach((article, index) => {
+//           appendAside(article, index);
+//           console.log(article.title);
+//         });
+//       } catch (err) {
+//         console.error("Erro ao processar artigos: ", err);
+//       }
+//     },
+//     error: function (err) {
+//       console.error("Erro ao buscar notícias: ", err);
+//     },
+//   });
+// }
 
 getNews();

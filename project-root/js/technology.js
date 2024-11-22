@@ -1,4 +1,5 @@
 import $ from "jquery";
+import "../styles/newsCard.css";
 
 const API_URL = 'https://newsapi.org/v2/top-headlines';
 const API_KEY = '2dc0825f6234474ab137f53b8add4125';
@@ -39,11 +40,11 @@ export function loadTechnologyContent() {
             const timeElapsed = timeSince(article.publishedAt);
 
             return `
-              <section class="card news-card" id="news-card-${index}">
+              <section class="news-card" id="news-card-${index}">
                 <section class="card-body">
-                  <img src="${article.urlToImage}" class="card-img-top news-img" alt="${article.title}" title="${article.title}"><br>
-                  <section class="card-text news-text">
-                    <h2 class="card-title news-title">${article.title}</h2>
+                  <img src="${article.urlToImage}" class="news-img" alt="${article.title}" title="${article.title}"><br>
+                  <section class="news-text">
+                    <h2 class="news-title">${article.title}</h2>
                     <p>${article.description}</p>
                     <p class="news-time-published">${timeElapsed}</p>
                   </section>
