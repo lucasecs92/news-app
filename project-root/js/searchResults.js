@@ -1,23 +1,12 @@
 import $ from "jquery";
 import "../styles/searchResults.css";
-
-const API_URL = 'https://newsapi.org/v2/everything';
-const API_KEY = '2dc0825f6234474ab137f53b8add4125';
-
-function formatDate(date) { 
-    const options = { day: 'numeric', month: 'short' }; // Formato de dia e mês abreviado 
-    return new Date(date).toLocaleDateString('pt-BR', options); // Formato de data pt-BR 
-}
-
-function timeSince(date) {
-    const timeElapsed = formatDate(date); 
-    return `Publicado em ${timeElapsed}`;
-}
+import { API_URL, API_KEY } from "./config"; 
+import { timeSince as utilsTimeSince, displayError } from "./utils";
 
 function renderSearchResults(articles, query) {
     const resultsHTML = articles.map((article, index) => {
         if (article.title !== '[Removed]' && article.description !== null) {
-            const timeElapsed = timeSince(article.publishedAt);
+            const timeElapsed = localTimeSince(article.publishedAt);
 
             return `
                 <section class="result-search-card" id="result-search-card-${index}">
@@ -42,6 +31,16 @@ function renderSearchResults(articles, query) {
     `);
 }
 
+function formatDate(date) { 
+    const options = { day: 'numeric', month: 'short' }; // Formato de dia e mês abreviado 
+    return new Date(date).toLocaleDateString('pt-BR', options); // Formato de data pt-BR 
+}
+
+function localTimeSince(date) {
+    const timeElapsed = formatDate(date); 
+    return `Publicado em ${timeElapsed}`;
+}
+
 export function searchArticles(query) {
     $.ajax({
         url: `${API_URL}?q=${query}&apiKey=${API_KEY}`,
@@ -51,10 +50,12 @@ export function searchArticles(query) {
                 renderSearchResults(response.articles, query);
             } catch (err) {
                 console.error('Erro ao processar artigos: ', err);
+                displayError('Erro ao processar artigos.');
             }
         },
         error: function(err) {
             console.error('Erro ao buscar notícias: ', err);
+            displayError('Erro ao buscar notícias.');
         }
     });
 }

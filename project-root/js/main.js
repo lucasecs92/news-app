@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { API_URL, API_KEY, COUNTRY, CATEGORY } from "../js/config.js";
+import { API_URL, API_KEY, COUNTRY, CATEGORY_GENERAL } from "../js/config.js";
 import { timeSince, displayError } from "../js/utils.js";
 import "../styles/mainNews.css";
 
@@ -21,22 +21,27 @@ function appendArticle(article, index) {
   }
 }
 
-async function getNews() {
-  try {
-    const response = await fetch(`${API_URL}?country=${COUNTRY}&category=${CATEGORY}&apiKey=${API_KEY}`);
-    const data = await response.json();
-    if (data.articles) {
-      data.articles.forEach((article, index) => {
-        appendArticle(article, index);
-        console.log(article.title);
-      });
-    } else {
-      displayError("Nenhuma notícia encontrada.");
-    }
-  } catch (err) {
-    console.error("Erro ao buscar notícias: ", err);
-    displayError("Erro ao buscar notícias. Por favor, tente novamente mais tarde.");
-  }
+function getNews() {
+  $.ajax({
+    url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_GENERAL}&apiKey=${API_KEY}`,
+    method: "GET",
+    success: function (response) {
+      if (response.articles) {
+        response.articles.forEach((article, index) => {
+          appendArticle(article, index);
+          console.log(article.title);
+        });
+      } else {
+        displayError("Nenhuma notícia encontrada.");
+      }
+    },
+    error: function (err) {
+      console.error("Erro ao buscar notícias: ", err);
+      displayError(
+        "Erro ao buscar notícias. Por favor, tente novamente mais tarde."
+      );
+    },
+  });
 }
 
 getNews();

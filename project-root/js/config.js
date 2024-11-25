@@ -1,4 +1,10 @@
 export const API_URL = "https://newsapi.org/v2/top-headlines";
 export const API_KEY = "2dc0825f6234474ab137f53b8add4125";
 export const COUNTRY = "us";
-export const CATEGORY = "general";
+export const CATEGORY_GENERAL = "general";
+export const CATEGORY_BUSINESS = "business";
+export const CATEGORY_ENTERTAINMENT = "entertainment";
+export const CATEGORY_SPORTS = "sports";
+export const CATEGORY_SCIENCE = "science";
+export const CATEGORY_HEALTH = "health";
+export const CATEGORY_TECHNOLOGY = "technology";

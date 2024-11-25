@@ -1,37 +1,11 @@
 import $ from "jquery";
 import "../styles/newsCard.css";
-
-const API_URL = 'https://newsapi.org/v2/top-headlines';
-const API_KEY = '2dc0825f6234474ab137f53b8add4125';
-
-function timeSince(date) {
-  const seconds = Math.floor((new Date() - new Date(date)) / 1000);
-  let interval = Math.floor(seconds / 31536000);
-  if (interval > 1) {
-    return `Há ${interval} anos`;
-  }
-  interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
-    return `Há ${interval} meses`;
-  }
-  interval = Math.floor(seconds / 86400);
-  if (interval > 1) {
-    return `Há ${interval} dias`;
-  }
-  interval = Math.floor(seconds / 3600);
-  if (interval > 1) {
-    return `Há ${interval} horas`;
-  }
-  interval = Math.floor(seconds / 60);
-  if (interval > 1) {
-    return `Há ${interval} minutos`;
-  }
-  return `Há ${Math.floor(seconds)} segundos`;
-}
+import { API_URL, API_KEY, COUNTRY, CATEGORY_SPORTS } from "./config";
+import { timeSince, displayError } from "./utils";
 
 export function loadSportsContent() {
   $.ajax({
-    url: `${API_URL}?country=us&category=sports&apiKey=${API_KEY}`,
+    url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_SPORTS}&apiKey=${API_KEY}`,
     method: 'GET',
     success: function(response) {
       try {
@@ -63,10 +37,12 @@ export function loadSportsContent() {
 
       } catch (err) {
         console.error('Erro ao processar artigos: ', err);
+        displayError('Erro ao processar artigos.');
       }
     },
     error: function(err) {
       console.error('Erro ao buscar notícias: ', err);
+      displayError('Erro ao buscar notícias.');
     }
   });
 }
