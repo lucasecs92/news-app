@@ -26,8 +26,7 @@
 #main-news-card-19 .card-body {
     display: flex;
     flex-direction: row-reverse;
-    gap: 1rem;
-    /* height: 55vh; */
+    gap: 0.5rem;
 }
 
 #main-news-card-0 .main-news-img,
@@ -54,12 +53,12 @@
 }
 
 .main-news-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #333;
 }
 
 .main-news-description {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #666;
     padding: 15px 0;
 }
