@@ -87,23 +87,27 @@
   }
 }
 @media screen and (max-width: 870px) {
+  #nav-bottom-wrap {
+    padding: 0;
+  }
+  #nav-bottom-wrap.fixed {
+    padding: 0.8rem 4.5% 0 4.5%;
+  }
   #menu-icons {
     display: block;
     text-align: center;
+    padding: 1rem 0 0.5rem 0;
   }
-
   #ul-list {
     flex-direction: column;
   }
-
   #ul-list li {
     padding: 2rem 0;
     border-bottom: 1px solid #ddd;
   }
 }
-
-@media screen and (max-width: 620px) {
+/* @media screen and (max-width: 620px) {
   #nav-bottom-wrap {
     padding: 1rem 0 0 0;
   }
-}
+} */

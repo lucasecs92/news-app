@@ -11,7 +11,6 @@
 }
 
 .aside-weather-wrap {
-    /* color: #ffffff; */
     padding: 15px 25px;
 }
 
@@ -67,3 +66,17 @@
 .previsao-footer svg {
     font-size: 1.5em;
 }
+
+@media screen and (max-width: 1070px) {
+    .aside-weather-wrap {
+        display: flex;
+        justify-content: space-between; 
+        padding: 0px 25px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .aside-weather-wrap {
+        display: block;
+        padding: 15px 25px;
+    }
+} 

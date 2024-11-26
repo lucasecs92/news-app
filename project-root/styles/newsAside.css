@@ -267,6 +267,18 @@
         flex-direction: row; 
         gap: 1rem;
     }
+    
+    #news-card-aside-1 .news-img-aside,
+    #news-card-aside-2 .news-img-aside,
+    #news-card-aside-3 .news-img-aside, 
+    #news-card-aside-4 .news-img-aside, 
+    #news-card-aside-16 .news-img-aside,
+    #news-card-aside-17 .news-img-aside, 
+    #news-card-aside-18 .news-img-aside,
+    #news-card-aside-19 .news-img-aside {
+        height: 10vh;
+    }
+
     #news-card-aside-5 .news-img-aside,
     #news-card-aside-6 .news-img-aside {
         width: 65%;
@@ -274,5 +286,51 @@
     #news-card-aside-0 .news-text-aside {
         text-align: center;
         padding: 1rem 3rem;
+    }
+    #news-card-aside-1 .news-title-aside,
+    #news-card-aside-2 .news-title-aside, 
+    #news-card-aside-3 .news-title-aside, 
+    #news-card-aside-4 .news-title-aside,
+    #news-card-aside-11 .news-title-aside,
+    #news-card-aside-12 .news-title-aside,
+    #news-card-aside-13 .news-title-aside, 
+    #news-card-aside-14 .news-title-aside,
+    #news-card-aside-15 .news-title-aside,
+    #news-card-aside-16 .news-title-aside,
+    #news-card-aside-17 .news-title-aside, 
+    #news-card-aside-18 .news-title-aside,
+    #news-card-aside-19 .news-title-aside  {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #news-card-aside-0 .card-body-aside {
+        padding: 1.5rem 0rem;
+        flex-direction: column-reverse;
+    }
+    #news-card-aside-1 .card-body-aside, 
+    #news-card-aside-2 .card-body-aside, 
+    #news-card-aside-3 .card-body-aside,
+    #news-card-aside-4 .card-body-aside,
+    #news-card-aside-16 .card-body-aside,
+    #news-card-aside-17 .card-body-aside,
+    #news-card-aside-18 .card-body-aside,
+    #news-card-aside-19 .card-body-aside {
+        flex-direction: column;
+    }
+    #news-card-aside-0 .news-text-aside {
+        text-align: start;
+        padding: 1rem 0rem;
+    }
+    #news-card-aside-1 .news-img-aside,
+    #news-card-aside-2 .news-img-aside,
+    #news-card-aside-3 .news-img-aside, 
+    #news-card-aside-4 .news-img-aside, 
+    #news-card-aside-16 .news-img-aside,
+    #news-card-aside-17 .news-img-aside, 
+    #news-card-aside-18 .news-img-aside,
+    #news-card-aside-19 .news-img-aside {
+        height: 25vh;
     }
 }
