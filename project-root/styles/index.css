@@ -56,3 +56,18 @@
         padding: 0 4.5%;
     }
 }
+@media screen and (max-width: 1070px) {
+    #main-content {
+        flex-direction: column;
+    }
+    #main-news {
+        width: 100%;
+        border-right: none;
+        padding: 0;
+    }
+    #aside-wrap {
+        width: 100%;
+        border-left: none;
+        padding: 0;
+    }
+}

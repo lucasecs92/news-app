@@ -1,7 +1,6 @@
 .aside-weather {
     background-color: rgba(52, 121, 150, 0.144);
     border: 1px solid rgba(128, 128, 128, 0.226);
-    /* border-top: 1px solid rgba(128, 128, 128, 0.226); */
     margin: 0 0 1rem 0;
     color: #343434;
 }

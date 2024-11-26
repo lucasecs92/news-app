@@ -26,3 +26,13 @@
 .footer-nav ul li a {
     text-decoration: none;
 }
+
+@media screen and (max-width: 1070px) {
+    .footer-container p, 
+    .footer-container a {
+        font-size: 1rem;
+    }
+    .footer-container span {
+        font-size: 1.5rem;
+    }
+}
