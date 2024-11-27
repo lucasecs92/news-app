@@ -1,6 +1,6 @@
 #navbar-top-wrap {
     width: 100%;
-    padding: 0.5rem 0; 
+    padding: 0.5rem 0;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -52,12 +52,10 @@
 }
 
 @media screen and (max-width: 620px) {
-    #navbar-top-wrap {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 5px;
-    }
-    #nav-search {
+    #nav-search.expanded {
         width: 100%;
+    }
+    #nav-date-wrap.hidden {
+        display: none;
     }
 }

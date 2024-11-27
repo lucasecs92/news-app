@@ -1,6 +1,6 @@
 import $ from "jquery";
 import "../styles/navbarTop.css";
-import { searchArticles } from "./searchResults"
+import { searchArticles } from "./searchResults";
 
 function loadNavbarTop() {
   const navbarHTML = `
@@ -26,18 +26,27 @@ function loadNavbarTop() {
   // Adicionando a função de clique ao ícone de busca
   $("#nav-search svg").on("click", function () {
     const searchField = $("#search-field");
+    const navDateWrap = $("#nav-date-wrap");
+    const navSearch = $("#nav-search");
+
     if (searchField.css("display") === "none") {
       searchField.css("display", "block");
+      if ($(window).width() <= 620) {
+        navSearch.addClass("expanded");
+        navDateWrap.addClass("hidden");
+      }
     } else {
       searchField.css("display", "none");
+      navSearch.removeClass("expanded");
+      navDateWrap.removeClass("hidden");
     }
   });
 
   $("#search-field").on("keypress", function (e) {
-    if (e.which === 13) { // Enter key 
-      const query = $(this).val(); 
-      searchArticles(query); 
-    } 
+    if (e.which === 13) { // Enter key
+      const query = $(this).val();
+      searchArticles(query);
+    }
   });
 }
 
