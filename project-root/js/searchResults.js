@@ -38,7 +38,7 @@ function formatDate(date) {
 
 function localTimeSince(date) {
     const timeElapsed = formatDate(date); 
-    return `Publicado em ${timeElapsed}`;
+    return `${timeElapsed}`;
 }
 
 export function searchArticles(query) {
