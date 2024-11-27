@@ -1,6 +1,6 @@
 .footer-container {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     padding: 3rem 0;
     font-family: "Ubuntu Mono", monospace;
@@ -34,5 +34,13 @@
     }
     .footer-container span {
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 }

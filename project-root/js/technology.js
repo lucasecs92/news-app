@@ -18,9 +18,9 @@ export function loadTechnologyContent() {
                 <section class="card-body">
                   <img src="${article.urlToImage}" class="news-img" alt="${article.title}" title="${article.title}"><br>
                   <section class="news-text">
-                    <h2 class="news-title">${article.title}</h2>
-                    <p>${article.description}</p>
-                    <p class="news-time-published">${timeElapsed}</p>
+                    <h2 class="nav-news-title">${article.title}</h2>
+                    <p class="nav-news-description">${article.description}</p>
+                    <p class="nav-news-time-published">${timeElapsed}</p>
                   </section>
                 </section>
               </section>
