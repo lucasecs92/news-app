@@ -8,6 +8,11 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+
+# dotenv environment variables 
+.env
+
+// .gitignore
 dist
 dist-ssr
 *.local
