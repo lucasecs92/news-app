@@ -1,6 +1,6 @@
 import $ from "jquery";
 import "../styles/newsAside.css";
-import { API_URL, API_KEY, COUNTRY, CATEGORY_SPORTS, CATEGORY_ENTERTAINMENT } from "./config";
+import { API_URL, API_KEY, COUNTRY, CATEGORY_SPORTS, CATEGORY_ENTERTAINMENT, CATEGORY_BUSINESS } from "./config";
 import { timeSince, displayError } from "./utils";
 
 function appendAside(article, index) {
@@ -24,57 +24,59 @@ function appendAside(article, index) {
   }
 }
 
-// function getNews() {
-//   $.ajax({
-//     url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_SPORTS}&apiKey=${API_KEY}`,
-//     method: "GET",
-//     success: function (response) {
-//       try {
-//         response.articles.forEach((article, index) => {
-//           appendAside(article, index);
-//           console.log(article.title);
-//         });
-//       } catch (err) {
-//         console.error("Erro ao processar artigos: ", err);
-//         displayError("Erro ao processar artigos.");
-//       }
-//     },
-//     error: function (err) {
-//       console.error("Erro ao buscar notícias: ", err);
-//       displayError("Erro ao buscar notícias.");
-//     },
-//   });
-// }
-
-// CONFIG PARA NÃO CONSUMIR DADOS DA API, ENQUANTO ESTIVER DESENVOLVENDO 
 function getNews() {
-  if (sessionStorage.getItem("newsData")) {
-    const newsData = JSON.parse(sessionStorage.getItem("newsData"));
-    newsData.forEach((article, index) => {
-      appendAside(article, index);
-    });
-  } else {
-    $.ajax({
-      url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_ENTERTAINMENT}&apiKey=${API_KEY}`,
-      method: "GET",
-      success: function (response) {
-        try {
-          sessionStorage.setItem("newsData", JSON.stringify(response.articles));
-          response.articles.forEach((article, index) => {
-            appendAside(article, index);
-            console.log(article.title);
-          });
-        } catch (err) {
-          displayError("Erro ao processar artigos");
-          console.error("Erro ao processar artigos: ", err);
-        }
-      },
-      error: function (err) {
-        displayError("Erro ao buscar notícias");
-        console.error("Erro ao buscar notícias: ", err);
-      },
-    });
-  }
+  $.ajax({
+    url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_ENTERTAINMENT}&apiKey=${API_KEY}`,
+    method: "GET",
+    success: function (response) {
+      try {
+        response.articles.forEach((article, index) => {
+          appendAside(article, index);
+          console.log(article.title);
+        });
+      } catch (err) {
+        console.error("Erro ao processar artigos: ", err);
+        displayError("Erro ao processar artigos.");
+      }
+    },
+    error: function (err) {
+      console.error("Erro ao buscar notícias: ", err);
+      displayError("Erro ao buscar notícias.");
+    },
+  });
 }
 
 getNews();
+
+// CONFIG PARA NÃO CONSUMIR DADOS DA API, NO MOMENTO QUE ESTIVER DESENVOLVENDO 
+// function getNews() {
+//   if (sessionStorage.getItem("newsData")) {
+//     const newsData = JSON.parse(sessionStorage.getItem("newsData"));
+//     newsData.forEach((article, index) => {
+//       appendAside(article, index);
+//     });
+//   } else {
+//     $.ajax({
+//       url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_ENTERTAINMENT}&apiKey=${API_KEY}`,
+//       method: "GET",
+//       success: function (response) {
+//         try {
+//           sessionStorage.setItem("newsData", JSON.stringify(response.articles));
+//           response.articles.forEach((article, index) => {
+//             appendAside(article, index);
+//             console.log(article.title);
+//           });
+//         } catch (err) {
+//           displayError("Erro ao processar artigos");
+//           console.error("Erro ao processar artigos: ", err);
+//         }
+//       },
+//       error: function (err) {
+//         displayError("Erro ao buscar notícias");
+//         console.error("Erro ao buscar notícias: ", err);
+//       },
+//     });
+//   }
+// }
+
+// getNews();
