@@ -1,6 +1,6 @@
 export const API_URL = "https://gnews.io/api/v4/top-headlines";
 // export const API_KEY = import.meta.env.API_KEY;
-export const API_KEY = 'c4bd0ee4742640a1faea61c23e2680d8';
+export const API_KEY = import.meta.env.GNEWS_API_KEY;
 export const COUNTRY = "us";
 export const CATEGORY_GENERAL = "general";
 export const CATEGORY_BUSINESS = "business";
