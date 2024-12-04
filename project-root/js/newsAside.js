@@ -1,6 +1,6 @@
 import $ from "jquery";
 import "../styles/newsAside.css";
-import { API_URL, API_KEY, COUNTRY, CATEGORY_SPORTS, CATEGORY_ENTERTAINMENT, CATEGORY_BUSINESS } from "./config";
+import { API_URL, API_KEY, COUNTRY, CATEGORY_ENTERTAINMENT } from "./config";
 import { timeSince, displayError } from "./utils";
 
 function appendAside(article, index) {
@@ -10,7 +10,7 @@ function appendAside(article, index) {
     $("#aside-news").append(`
       <section class="news-card-aside" id="news-card-aside-${index}">
         <section class="card-body-aside">
-          <img src="${article.urlToImage}" class="news-img-aside" alt="${
+          <img src="${article.image}" class="news-img-aside" alt="${
           article.title}" title="${article.title}">
           <section class="news-text-aside">
             <p class="news-author">${article.author || ""}</p>
@@ -24,59 +24,61 @@ function appendAside(article, index) {
   }
 }
 
-function getNews() {
-  $.ajax({
-    url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_ENTERTAINMENT}&apiKey=${API_KEY}`,
-    method: "GET",
-    success: function (response) {
-      try {
-        response.articles.forEach((article, index) => {
-          appendAside(article, index);
-          console.log(article.title);
-        });
-      } catch (err) {
-        console.error("Erro ao processar artigos: ", err);
-        displayError("Erro ao processar artigos.");
-      }
-    },
-    error: function (err) {
-      console.error("Erro ao buscar notícias: ", err);
-      displayError("Erro ao buscar notícias.");
-    },
-  });
-}
-
-getNews();
-
-// CONFIG PARA NÃO CONSUMIR DADOS DA API, NO MOMENTO QUE ESTIVER DESENVOLVENDO 
 // function getNews() {
-//   if (sessionStorage.getItem("newsData")) {
-//     const newsData = JSON.parse(sessionStorage.getItem("newsData"));
-//     newsData.forEach((article, index) => {
-//       appendAside(article, index);
-//     });
-//   } else {
-//     $.ajax({
-//       url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_ENTERTAINMENT}&apiKey=${API_KEY}`,
-//       method: "GET",
-//       success: function (response) {
-//         try {
-//           sessionStorage.setItem("newsData", JSON.stringify(response.articles));
-//           response.articles.forEach((article, index) => {
-//             appendAside(article, index);
-//             console.log(article.title);
-//           });
-//         } catch (err) {
-//           displayError("Erro ao processar artigos");
-//           console.error("Erro ao processar artigos: ", err);
-//         }
-//       },
-//       error: function (err) {
-//         displayError("Erro ao buscar notícias");
-//         console.error("Erro ao buscar notícias: ", err);
-//       },
-//     });
-//   }
+//   $.ajax({
+//     url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_ENTERTAINMENT}&apiKey=${API_KEY}`,
+//     method: "GET",
+//     success: function (response) {
+//       try {
+//         response.articles.forEach((article, index) => {
+//           appendAside(article, index);
+//           console.log(article.title);
+//         });
+//       } catch (err) {
+//         console.error("Erro ao processar artigos: ", err);
+//         displayError("Erro ao processar artigos.");
+//       }
+//     },
+//     error: function (err) {
+//       console.error("Erro ao buscar notícias: ", err);
+//       displayError("Erro ao buscar notícias.");
+//     },
+//   });
 // }
 
 // getNews();
+
+// CONFIG PARA EVITAR O CONSUMO DESNECESSÁRIO DA API, DURANTE O DESENVOLVIMENTO
+function getNews() {
+  // Verifica se os dados já estão armazenados no sessionStorage
+  if (sessionStorage.getItem("newsAsideData")) {
+    const newsData = JSON.parse(sessionStorage.getItem("newsAsideData"));
+    newsData.forEach((article, index) => {
+      appendAside(article, index);
+    });
+  } else {
+    $.ajax({
+      url: `${API_URL}?token=${API_KEY}&country=${COUNTRY}&topic=${CATEGORY_ENTERTAINMENT}`,
+      method: "GET",
+      success: function (response) {
+        try {
+          // Armazena os dados no sessionStorage
+          sessionStorage.setItem("newsAsideData", JSON.stringify(response.articles));
+          response.articles.forEach((article, index) => {
+            appendAside(article, index);
+            console.log(article.title);
+          });
+        } catch (err) {
+          console.error("Erro ao processar artigos: ", err);
+          displayError("Erro ao processar artigos.");
+        }
+      },
+      error: function (err) {
+        console.error("Erro ao buscar notícias: ", err);
+        displayError("Erro ao buscar notícias.");
+      },
+    });
+  }
+}
+
+getNews();

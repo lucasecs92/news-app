@@ -11,7 +11,7 @@ function renderSearchResults(articles, query) {
             return `
                 <section class="result-search-card" id="result-search-card-${index}">
                     <section class="result-card-body">
-                        <img src="${article.urlToImage}" class="result-news-img" alt="${article.title}" title="${article.title}"><br>
+                        <img src="${article.image}" class="result-news-img" alt="${article.title}" title="${article.title}"><br>
                         <section class="result-news-text">
                             <h2 class="result-news-title">${article.title}</h2>
                             <p class="result-news-p">${article.description}</p>
@@ -43,7 +43,7 @@ function localTimeSince(date) {
 
 export function searchArticles(query) {
     $.ajax({
-        url: `${API_URL}?q=${query}&apiKey=${API_KEY}`,
+        url: `${API_URL}?q=${query}&token=${API_KEY}`,
         method: 'GET',
         success: function(response) {
             try {

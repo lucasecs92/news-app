@@ -5,7 +5,7 @@ import { timeSince, displayError } from "./utils";
 
 export function loadBusinessContent() {
   $.ajax({
-    url: `${API_URL}?country=${COUNTRY}&category=${CATEGORY_BUSINESS}&apiKey=${API_KEY}`,
+    url: `${API_URL}?token=${API_KEY}&country=${COUNTRY}&topic=${CATEGORY_BUSINESS}`,
     method: 'GET',
     success: function(response) {
       try {
@@ -16,7 +16,7 @@ export function loadBusinessContent() {
             return `
               <section class="news-card" id="news-card-${index}">
                 <section class="card-body">
-                  <img src="${article.urlToImage}" class="news-img" alt="${article.title}" title="${article.title}"><br>
+                  <img src="${article.image}" class="news-img" alt="${article.title}" title="${article.title}"><br>
                   <section class="news-text">
                     <h2 class="nav-news-title">${article.title}</h2>
                     <p class="nav-news-description">${article.description}</p>
