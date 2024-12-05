@@ -6,7 +6,7 @@
 #news-card-aside-2,
 #news-card-aside-3,
 #news-card-aside-4,
-#news-card-aside-9,
+/* #news-card-aside-9, */
 #news-card-aside-10,
 #news-card-aside-16,
 #news-card-aside-17,
@@ -166,7 +166,7 @@
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px 10px 10px 0;
-    margin: 0.8rem 0;
+    /* margin: 0.8rem 0; */
     transform: scaleY(1.3);
 }
 

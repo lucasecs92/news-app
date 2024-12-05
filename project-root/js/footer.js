@@ -14,7 +14,7 @@ $(function () {
                         <a href="#">Contato</a>
                     </li> 
                     <li>
-                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Políticas de Privacidade</a>
                     </li> 
                 </ul> 
             </nav> 

@@ -26,7 +26,7 @@
 #main-news-card-19 .card-body {
     display: flex;
     flex-direction: row-reverse;
-    gap: 0.5rem;
+    gap: 1.5rem;
 }
 
 #main-news-card-0 .main-news-img,
@@ -49,12 +49,17 @@
 #main-news-card-17 .main-news-img,
 #main-news-card-18 .main-news-img,
 #main-news-card-19 .main-news-img {
-    width: 65%;
+    width: 62%;
 }
 
 .main-news-title {
     font-size: 1.4rem;
     color: #333;
+}
+
+.main-news-title:hover {
+    color: #343434ce;
+    cursor: pointer;
 }
 
 .main-news-description {
