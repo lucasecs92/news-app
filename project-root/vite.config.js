@@ -5,6 +5,6 @@ dotenv.config();
 
 export default defineConfig({
   define: {
-    'import.meta.env.API_KEY': JSON.stringify(process.env.API_KEY)
+    'import.meta.env.GNEWS_API_KEY': JSON.stringify(process.env.GNEWS_API_KEY)
   }
 });
