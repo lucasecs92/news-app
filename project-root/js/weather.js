@@ -3,7 +3,7 @@ import "../styles/weather.css";
 
 $(function () {
 
-  const apiKey = "35204941aef10001e4379b8c20a41230";
+  const apiKey = import.meta.env.OPENWEATHER_API_KEY;
 
   // Verificar se o navegador suporta a API de Geolocalização
   if ("geolocation" in navigator) {
